@@ -58,6 +58,7 @@ export default function CreateStories() {
             value={title}
             id="title"
             onChange={(e) => setTitle(e.target.value)}
+            required
           />
         </div>
         <div className={styles.formField}>
@@ -69,6 +70,7 @@ export default function CreateStories() {
             value={content}
             id="content"
             onChange={(e) => setContent(e.target.value)}
+            required
           />
         </div>
         <div className={styles.formField}>

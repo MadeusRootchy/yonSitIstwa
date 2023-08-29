@@ -33,6 +33,7 @@ const StoryForm = ({ initialValues, onSubmit, onCancel }) => {
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          required
         />
       </div>
       <div className={styles.formField}>
@@ -43,6 +44,7 @@ const StoryForm = ({ initialValues, onSubmit, onCancel }) => {
           className={styles.formTextarea}
           value={content}
           onChange={(e) => setContent(e.target.value)}
+          required
         />
       </div>
       <div className={styles.formField}>

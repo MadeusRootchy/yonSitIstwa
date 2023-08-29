@@ -137,8 +137,8 @@ export default function UserStories() {
           </li>
         ))}
       </ul>
-      <h3><Link to="/login" className={`${styles.actionButton} ${styles.readButton}`}>
-        {isAuthenticated ? '':"Go to the login page Login"}</Link></h3>
+      <h3><Link to="/login">
+        {isAuthenticated ? '':"Go to the login page"}</Link></h3>
 
       
     </div>

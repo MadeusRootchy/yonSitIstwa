@@ -8,6 +8,7 @@ import Layout from "./layout";
 import CreateStories from "./createstories";
 import { useAuth } from "./auth"; 
 import UserStories from "./story";
+import { Link } from "react-router-dom";
 
 export default function Source() {
   const { isAuthenticated } = useAuth();
@@ -21,7 +22,8 @@ export default function Source() {
 
         
         <Route path="/story" element={ <UserStories /> } />
-        <Route path="/createstories" element={isAuthenticated ? <CreateStories /> : <Navigate to="/login" />} />
+        <Route path="/createstories" element={isAuthenticated ? <CreateStories /> :<h3><Link to="/login">
+        {isAuthenticated ? '':"Go to the login page"}</Link></h3>} />
       </Route>
       <Route path="*" element={<Notfound />} />
     </Routes>
