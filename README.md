@@ -1,7 +1,12 @@
 link  =>>>>>>     https://yon-sit-istwa.vercel.app/
 email : george.bluth@reqres.in
 password : George
-
+\\\\\\\\\
+email : tracey.ramos@reqres.in
+password : Tracey
+\\\\\\\\\\
+email : emma.wong@reqres.in
+password : Emma
 
 # Getting Started with Create React App
 
