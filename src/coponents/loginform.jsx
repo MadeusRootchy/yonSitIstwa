@@ -29,8 +29,8 @@ export default function LoginForm() {
       const {token} = await usersResponse.json();
       setIsAuthenticated(true);
       localStorage.setItem("token", token);
+      const matchingUser = await usersResponse.json().data.find(user => user.email === email && user.first_name === password);
       localStorage.setItem("authenticatedUser", JSON.stringify(matchingUser));
-      const matchingUser = {token}.data.find(user => user.email === email && user.first_name === password);
       console.log('login succesfull')
       } else {
         console.error("Authentication failed");
