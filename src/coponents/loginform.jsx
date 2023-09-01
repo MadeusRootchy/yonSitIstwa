@@ -25,7 +25,7 @@ export default function LoginForm() {
         body: JSON.stringify(credentials),
       });
       const response = await fetch("https://reqres.in/api/users");
-      const userData = await usersResponse.json();
+      const userData = await response.json();
 
       if (usersResponse.ok){
       const {token} = await usersResponse.json();
