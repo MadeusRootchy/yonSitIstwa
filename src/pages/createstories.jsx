@@ -22,7 +22,6 @@ export default function CreateStories() {
       return;
     }
     const storedUser = JSON.parse(localStorage.getItem('authenticatedUser'));
-    console.log(storedUser);
     const newStory = {
       id: Date.now(),
       title,
