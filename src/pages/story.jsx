@@ -95,7 +95,7 @@ export default function UserStories() {
           </li>
         ))}
       </ul>
-      <h2>All Public Stories</h2>
+      <h2>other Users Public Stories</h2>
       <ul>
         {publicStories.map((story, index) => (
           <li key={index} className={styles.storyContainer}>
@@ -113,10 +113,6 @@ export default function UserStories() {
                 <h3>{story.title}</h3>
                 <p>{story.content.slice(0, 100)}...</p>
                 <div className={styles.storyActions}>
-                  <button  className={`${styles.actionButton} ${styles.deleteButton}`} 
-                  onClick={() => deleteStory(story.id)}>Delete</button>
-                  <button className={`${styles.actionButton} ${styles.editButton}`}
-                   onClick={() => handleEditClick(story)}>Edit</button>
                   <button className={`${styles.actionButton} ${styles.readButton}`} 
                   onClick={() => handleReadClick(story)}>Read</button>
 

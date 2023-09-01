@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { useAuth } from "../pages/auth";
 import styles from './loginform.module.css';
+
 
 export default function LoginForm() {
   const { isAuthenticated, setIsAuthenticated } = useAuth();
@@ -16,15 +17,21 @@ export default function LoginForm() {
     };
   
     try {
-      const usersResponse = await fetch("https://reqres.in/api/users");
-      const usersData = await usersResponse.json();
+      const usersResponse = await fetch("https://reqres.in/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(credentials),
+      });
 
-      const matchingUser = usersData.data.find(user => user.email === email && user.first_name === password);
-
-      if (matchingUser) {
-        setIsAuthenticated(true);
-        localStorage.setItem("authenticatedUser", JSON.stringify(matchingUser));
-        console.log('login succefull')
+      if (usersResponse.ok){
+      const {token} = await usersResponse.json();
+      setIsAuthenticated(true);
+      localStorage.setItem("token", token);
+      localStorage.setItem("authenticatedUser", JSON.stringify(matchingUser));
+      const matchingUser = {token}.data.find(user => user.email === email && user.first_name === password);
+      console.log('login succesfull')
       } else {
         console.error("Authentication failed");
       }

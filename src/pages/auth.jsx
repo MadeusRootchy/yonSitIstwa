@@ -6,7 +6,6 @@ export function AuthProvider({ children }) {
     const [isAuthenticated, setIsAuthenticated] = useState(
       !!localStorage.getItem("token") 
     );
-  
     useEffect(() => {
       if (!isAuthenticated) {
         localStorage.removeItem("token");
