@@ -24,12 +24,14 @@ export default function LoginForm() {
         },
         body: JSON.stringify(credentials),
       });
+      const response = await fetch("https://reqres.in/api/users");
+      const userData = await usersResponse.json();
 
       if (usersResponse.ok){
       const {token} = await usersResponse.json();
       setIsAuthenticated(true);
       localStorage.setItem("token", token);
-      const matchingUser = await usersResponse.json().data.find(user => user.email === email && user.first_name === password);
+      const matchingUser = userData.data.find(user => user.email === email && user.first_name === password);
       localStorage.setItem("authenticatedUser", JSON.stringify(matchingUser));
       console.log('login succesfull')
       } else {
