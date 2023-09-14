@@ -1,11 +1,16 @@
 import React from "react";
 import styles from "./about.module.css";
+// import { useColor } from "../coponents/color";
 
 export default function About() {
+  // const [color,changeColor] = useColor()
   return (
-    <div className={styles.container}>
+  <div  >
+
+    <div className={styles.container} >
       <div className={styles.header}>
-        <h2>À Propos</h2>
+        <h2 
+>About us</h2>
       </div>
       <div className={styles.mainContent}>
         <p>
@@ -39,5 +44,7 @@ export default function About() {
         <p>Made with ❤️ by Rootchy</p>
       </div>
     </div>
+   </div>
+
   );
 }

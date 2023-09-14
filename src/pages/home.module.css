@@ -1,20 +1,44 @@
 
-.container {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .animationText {
+.main {
+  display: flex;
+  justify-content: end;
+  align-items: flex-start;
+  min-height: 100vh; 
+}
+
+
+.content {
+  width: 100px;
+  max-width: 200px;
+  background-color: #bebaba;
+  text-align: center;
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); 
+  gap: 5px; 
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.box {
+  width: 50px;
+  height: 20px;
+  margin: 2px;
+  border: 10px;
+  border-color:white;
+  ;
+}
+
+.animationText {
+  opacity: 0;
+  animation: fadeIn 10s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
     opacity: 0;
-    animation: fadeIn 10s ease-in-out forwards;
   }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  100% {
+    opacity: 1;
   }
-  
+}
+

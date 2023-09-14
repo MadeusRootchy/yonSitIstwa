@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useAuth } from "./auth";
-import useStoryCRUD from "./action";
+import { useAuth } from "../coponents/auth";
+import useStoryCRUD from "../coponents/action";
 import StoryForm from "./storyform";
 import styles from './userstory.module.css';
 import { Link } from "react-router-dom";

@@ -1,5 +1,5 @@
 import React from "react";
-import useStoryCRUD from "./action";
+import useStoryCRUD from "../coponents/action";
 import styles from "./ReadSingleStory.module.css"; 
 
 const ReadSingleStory = ({ storyId }) => {

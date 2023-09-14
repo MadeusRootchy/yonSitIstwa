@@ -4,9 +4,9 @@ import Home from "./home";
 import About from "./about";
 import Login from "./login";
 import Notfound from "./notfound";
-import Layout from "./layout";
+import Layout from "../coponents/layout";
 import CreateStories from "./createstories";
-import { useAuth } from "./auth"; 
+import { useAuth } from "../coponents/auth"; 
 import UserStories from "./story";
 import { Link } from "react-router-dom";
 

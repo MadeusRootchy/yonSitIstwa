@@ -1,5 +1,5 @@
 import React, { useState,useContext } from "react";
-import { useAuth } from "../pages/auth";
+import { useAuth } from "./auth";
 import styles from './loginform.module.css';
 
 
@@ -33,7 +33,7 @@ export default function LoginForm() {
       localStorage.setItem("token", token);
       const matchingUser = userData.data.find(user => user.email === email && user.first_name === password);
       localStorage.setItem("authenticatedUser", JSON.stringify(matchingUser));
-      console.log('login succesfull')
+      console.log('login successful')
       } else {
         console.error("Authentication failed");
       }

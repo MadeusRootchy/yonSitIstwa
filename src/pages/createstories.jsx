@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useAuth } from "./auth";
-import useStoryCRUD from "./action";
+import { useAuth } from "../coponents/auth";
+import useStoryCRUD from '../coponents/action';
 import { useNavigate } from "react-router-dom";
 import styles from './createstories.module.css';
 
 export default function CreateStories() {
-  const { isAuthenticated, user } = useAuth();
+  const { isAuthenticated } = useAuth();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [isPublic, setIsPublic] = useState(true);
@@ -31,9 +31,6 @@ export default function CreateStories() {
       author: !isAnonymous ? storedUser.first_name : "Anonymous",
     };
 
-   
-  
-
     createStory(newStory);
 
     setTitle("");
@@ -45,7 +42,7 @@ export default function CreateStories() {
   };
   return (
     <div className={styles.createStoriesPage}>
-      <h4>Create Stories page</h4>
+      <h4>Create Stories </h4>
       <form onSubmit={handleSubmit}>
         <div className={styles.formField}>
           <label className={styles.formLabel} htmlFor="title">
