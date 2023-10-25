@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Main from './Pages/Main';
+import Main from './pages/Main';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './Components/AuthContext';
 

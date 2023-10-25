@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { useColor } from "../Components/useColor";
 import styles from './Home.module.css';
-import Login from '../Pages/Login';
 import StoryList from "./StoryList";
-import { useAuth } from "../Components/AuthContext";
 import CreateStory from "./CreateStory";
 
 export default function Home() {
   const [color, setColor] = useColor();
-  const [selectedColorClass, setSelectedColorClass] = useState(styles.content); // Classe par défaut
+  const [selectedColorClass, setSelectedColorClass] = useState(styles.content); 
 
 
 
