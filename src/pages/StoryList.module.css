@@ -1,4 +1,14 @@
+.storyList{
+  height: 600px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .storyContainer {
+    width: 500px;
+    
     margin-bottom: 20px;
     padding: 20px;
     border: 1px solid #ddd;
@@ -6,13 +16,22 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
   
+  .storyBody{
+    width: 60%;
+    margin: auto;
+    border: 1px solid red;
+  }
+
   .storyTitle {
+    text-transform: capitalize;
     font-size: 1.2rem;
     margin-bottom: 10px;
   }
   
   .storyContent {
     margin-bottom: 15px;
+    padding: 10px;
+    color: #eee;
   }
   
   .storyActions {

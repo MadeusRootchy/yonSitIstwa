@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useAuth } from "../coponents/auth";
-import useStoryCRUD from '../coponents/action';
 import { useNavigate } from "react-router-dom";
-import styles from './createstories.module.css';
+import { useAuth } from "../Components/AuthContext";
+import CRUD from '../Components/CRUD';
+import styles from './CreateStory.module.css';
 
-export default function CreateStories() {
+export default function CreateStory() {
   const { isAuthenticated } = useAuth();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -12,7 +12,7 @@ export default function CreateStories() {
   const [isAnonymous, setIsAnonymous] = useState(false);
   const navigate = useNavigate();
 
-  const { createStory } = useStoryCRUD("stories");
+  const { createStory } = CRUD("stories");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +21,7 @@ export default function CreateStories() {
       console.log("You are not authorized to create a story.");
       return;
     }
+    
     const storedUser = JSON.parse(localStorage.getItem('authenticatedUser'));
     const newStory = {
       id: Date.now(),
@@ -39,11 +40,12 @@ export default function CreateStories() {
     setIsAnonymous(false);
 
     navigate("/story");
-  };
+  }
+
   return (
-    <div className={styles.createStoriesPage}>
-      <h4>Create Stories </h4>
-      <form onSubmit={handleSubmit}>
+    <div className={styles.createStory}>
+      <h2>New Story</h2>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.formField}>
           <label className={styles.formLabel} htmlFor="title">
             Title:
@@ -93,9 +95,11 @@ export default function CreateStories() {
             Anonymous
           </label>
         </div>
-        <button className={styles.submitButton} type="submit" id="create">
-          Create Story
-        </button>
+        <div className={styles.formField}>
+          <button className={styles.submitButton} type="submit" id="create">
+            Create Story
+          </button>
+        </div>
       </form>
     </div>
   );

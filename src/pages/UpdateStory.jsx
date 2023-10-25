@@ -1,7 +1,7 @@
 import React, { useState} from "react";
-import styles from './storyform.module.css'
+import styles from './UpdateStory.module.css'
 
-const StoryForm = ({ initialValues, onSubmit, onCancel }) => {
+const UpdateStory = ({ initialValues, onSubmit, onCancel }) => {
   const [title, setTitle] = useState(initialValues.title);
   const [content, setContent] = useState(initialValues.content);
   const [isPublic, setIsPublic] = useState(initialValues.isPublic);
@@ -79,4 +79,4 @@ const StoryForm = ({ initialValues, onSubmit, onCancel }) => {
   );
 };
 
-export default StoryForm;
+export default UpdateStory;

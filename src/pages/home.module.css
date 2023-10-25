@@ -1,44 +1,30 @@
-
-.main {
-  display: flex;
-  justify-content: end;
-  align-items: flex-start;
-  min-height: 100vh; 
+:root{
+  --main-color: #60a3bc;
+  --sec-color: #1e3799;
+  --third-color: #b71540;
 }
 
 
-.content {
-  width: 100px;
-  max-width: 200px;
-  background-color: #bebaba;
+
+
+.banner{
+  width: 80%;
+  margin: auto;
+}
+
+.banner h2{
+  font-size: 42px;
+  text-transform: uppercase;
+  padding: 10px;
   text-align: center;
-  display: grid; 
-  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); 
-  gap: 5px; 
-  justify-content: center;
-  align-items: flex-start;
 }
 
-.box {
-  width: 50px;
-  height: 20px;
-  margin: 2px;
-  border: 10px;
-  border-color:white;
-  ;
+.banner p{
+  text-align: center;
+  font-size: 20px;
 }
 
-.animationText {
-  opacity: 0;
-  animation: fadeIn 10s ease-in-out forwards;
+.banner h4{
+  text-align: center;
+  font-size: 16px;
 }
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-

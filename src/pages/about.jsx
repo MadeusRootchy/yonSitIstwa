@@ -1,16 +1,13 @@
-import React from "react";
-import styles from "./about.module.css";
-// import { useColor } from "../coponents/color";
+import styles from "./About.module.css";
 
 export default function About() {
   // const [color,changeColor] = useColor()
   return (
-  <div  >
+  <div className="about">
 
     <div className={styles.container} >
       <div className={styles.header}>
-        <h2 
->About us</h2>
+        <h2>About us</h2>
       </div>
       <div className={styles.mainContent}>
         <p>
