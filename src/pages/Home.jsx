@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import Login from '../Pages/Login';
 import StoryList from "./StoryList";
-import { useAuth } from "../Components/AuthContext";
 import CreateStory from "./CreateStory";
 
 export default function Home() {

@@ -3,7 +3,7 @@
 export default function Footer(){
 
     return(
-        <div className="footer">
+        <footer className="footer">
             <div className="up">
                 <div className="left">Left</div>
                 <div className="middle">Middle</div>
@@ -12,6 +12,6 @@ export default function Footer(){
             <div className="bottom">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
             </div>
-        </div>
+        </footer>
     )
 }
