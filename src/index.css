@@ -1,0 +1,273 @@
+:root{
+    --light: #f5f6fa;
+    --main: #353b48;
+    --sec:#c23616;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* LAYOUT */
+.layout{
+    width: 100%;
+    background-color: var(--main);
+
+}
+
+nav{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav li a{
+    color: var(--light);
+
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+/* FOOTER */
+.footer{
+    width: 100%;
+    height: 20vh;
+    position: absolute;
+    /* bottom: 0; */
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    background-color: var(--main);  
+    color: var(--light);
+    font-size: 18px; 
+}
+.footer .up{
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.footer .bottom{
+    text-align: center;
+    border: 1px solid var(--light);
+
+}
+
+/* HOME */
+.home{
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
+    border: 1px solid var(--main);
+}
+
+.home h2{
+    text-transform: uppercase;
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.home p{
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* ABOUT */
+.about{
+    width: 60%;
+    margin: 10px auto;
+    text-align: center;
+    border: 1px solid var(--main);
+    text-justify: auto;
+    font-size: 18px;
+}
+
+/* STORIES */
+.story-list{
+    width: 80%;
+    margin: auto;
+}
+.story-list .my-stories, .public-stories{
+    margin: 20px;
+}
+
+.story-list h2{
+    font-size: 36px;
+    color: var(--main);
+    text-decoration: underline;
+}
+
+.story-snippet{
+    margin: 10px;
+    padding: 25px;
+    max-width: 600px;
+    border: 1px solid var(--main);
+    border-radius: 10px;
+    text-align: justify;
+}
+
+.story-snippet h3{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--sec);
+}
+
+.story-snippet p{
+    font-size: 1em;
+    padding: 10px 0;
+}
+.story-list button{
+    height: 25px;
+    padding: 5px;
+    margin: 3px;
+}
+
+.story-details {
+    padding: 10px;
+    margin: 10px 25px;
+    font-size: 1.1em;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 1px 2px 3px var(--main);
+}
+
+/* EDIT STORIES */
+.form-edit{
+    max-width: 600px;
+    margin: 10px;
+    padding: 25px;
+    border-radius: 7px;
+    border: 1px solid var(--main);
+}
+
+.form-edit input[type='text']{
+    width: 400px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form-edit label{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.form-edit .form-field{
+    max-width: 400px;
+    margin: 15px 0;
+
+}
+
+.form-edit textarea{
+    width: 500px;
+    height: 250px;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    
+}
+
+.form-edit button{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    padding: 0 10px;
+    color: var(--light);
+}
+
+.form-edit .checkbox-label{
+    margin: 0 5px;
+}
+
+.btn-save{
+    background-color: #0e6f05;
+
+}
+
+.btn-cancel{
+    background-color: #c23616;
+}
+
+
+/* CREATE STORY */
+
+.new-story{
+    width: 80%;
+    max-width: 600px;
+    margin:20px auto;
+}
+
+.new-story h2{
+    font-size: 36px;
+    color: var(--main);
+    text-decoration: underline;
+}
+
+.new-story input[type='text']{
+    width: 400px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.new-story label{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.new-story .form-field{
+    max-width: 400px;
+    margin: 15px 0;
+
+}
+
+.new-story textarea{
+    width: 500px;
+    height: 300px;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    
+}
+
+.new-story button{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    padding: 0 10px;
+    color: var(--light);
+}
+
+.new-story .checkbox-label{
+    margin: 0 5px;
+}
+
+.btn-save{
+    background-color: #0e6f05;
+    height: 30px;
+}
+
+.btn-cancel{
+    background-color: #c23616;
+    height: 30px;
+}

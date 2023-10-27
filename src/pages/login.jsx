@@ -1,6 +1,5 @@
 import React, { useState,useContext } from "react";
 import { useAuth } from "../Components/AuthContext";
-import styles from './Login.module.css';
 
 
 export default function Login() {
@@ -49,23 +48,23 @@ export default function Login() {
 
 
   return (
-    <div className={styles.login}>
+    <div className={"login"}>
       <h2>Login</h2>
       {
         isAuthenticated ? 
       (
         <div>You are already logged in !</div>
       ) : (
-        <form onSubmit={handleLogin} className={styles.form}>
-          <div className={styles.formField}>
+        <form onSubmit={handleLogin} className={"form"}>
+          <div className={"formField"}>
             <label 
-            className={styles.formLabel} 
+            className={"formLabel"} 
             htmlFor="email">
               Email :
             </label>
             <br />
             <input
-              className={styles.formInput}
+              className={"formInput"}
               type="email"
               value={email}
               id="email"
@@ -73,15 +72,15 @@ export default function Login() {
             />
           </div>
           <br />
-          <div className={styles.formField}>
+          <div className={"formField"}>
             <label 
-            className={styles.formLabel} 
+            
             htmlFor="password">
               Password/Firstname :
             </label>
             <br />
             <input
-              className={styles.formInput}
+              
               type="password"
               value={password}
               id="password"
@@ -89,8 +88,8 @@ export default function Login() {
             />
           </div>
           <br />
-          <div className={styles.formField}>
-            <button className={styles.submitBtn} type="submit">
+          <div className={"formField"}>
+            <button  type="submit">
               Login
             </button>
           </div>

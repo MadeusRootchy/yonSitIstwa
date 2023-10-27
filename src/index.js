@@ -4,6 +4,10 @@ import './index.css';
 import Main from './Pages/Main';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './Components/AuthContext';
+import { ThemeProvider,  } from './Components/ThemeContext';
+
+
+
 
 
 
@@ -12,7 +16,9 @@ root.render(
   <React.StrictMode>
       <BrowserRouter>
         <AuthProvider>
-          <Main />
+          <ThemeProvider>
+            <Main />
+          </ThemeProvider>
         </AuthProvider>
       </BrowserRouter>
   </React.StrictMode>

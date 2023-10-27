@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Components/AuthContext";
 import CRUD from '../Components/CRUD';
-import styles from './CreateStory.module.css';
 
 export default function CreateStory() {
   const { isAuthenticated } = useAuth();
@@ -43,15 +42,15 @@ export default function CreateStory() {
   }
 
   return (
-    <div className={styles.createStory}>
+    <div className="new-story">
       <h2>New Story</h2>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={styles.formField}>
-          <label className={styles.formLabel} htmlFor="title">
-            Title:
+      <form onSubmit={handleSubmit} >
+        <div className="form-field">
+          <label className= "form-label" htmlFor="title">
+            Title
           </label>
           <input
-            className={styles.formInput}
+            className="form-input"
             type="text"
             value={title}
             id="title"
@@ -59,45 +58,44 @@ export default function CreateStory() {
             required
           />
         </div>
-        <div className={styles.formField}>
-          <label className={styles.formLabel} htmlFor="content">
+        <div className="form-field">
+          <label className="form-label" htmlFor="content">
             Content:
           </label>
           <textarea
-            className={styles.formTextarea}
+            className="form-textarea"
             value={content}
             id="content"
             onChange={(e) => setContent(e.target.value)}
             required
           />
         </div>
-        <div className={styles.formField}>
-          <label className={styles.checkboxLabel} htmlFor="Public">
-            <input
-              className={styles.checkboxInput}
+        <div className="form-field">
+        <input
+              className="checkbox-input"
               type="checkbox"
               id="Public"
               checked={isPublic}
               onChange={() => setIsPublic(!isPublic)}
             />
+          <label className="checkbox-label" htmlFor="Public">
             Public
           </label>
         </div>
-        <div className={styles.formField}>
-          <label className={styles.checkboxLabel} htmlFor="Anonymous">
-            <input
-              className={styles.checkboxInput}
-              type="checkbox"
-              id="Anonymous"
-              checked={isAnonymous}
-              onChange={() => setIsAnonymous(!isAnonymous)}
-            />
+        <div className="form-field">
+        <input
+            type="checkbox"
+            id="Anonymous"
+            checked={isAnonymous}
+            onChange={() => setIsAnonymous(!isAnonymous)}
+          />
+          <label className="checkbox-label" htmlFor="Anonymous">
             Anonymous
           </label>
         </div>
-        <div className={styles.formField}>
-          <button className={styles.submitButton} type="submit" id="create">
-            Create Story
+        <div>
+          <button type="submit" id="create" className="btn-save">
+            Post 
           </button>
         </div>
       </form>

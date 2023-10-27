@@ -4,15 +4,20 @@ import Home from "./Home";
 import About from "./About";
 import Login from "./Login";
 import NotFound from "./NotFound";
-import Layout from "../Components/Layout";
 import CreateStory from "./CreateStory";
-import { useAuth } from "../Components/AuthContext"; 
 import StoryList from "./StoryList";
+import Layout from "../Components/Layout";
+import Footer from '../Components/Footer';
+import { useAuth } from "../Components/AuthContext"; 
+import { useTheme } from "../Components/ThemeContext";
 
 export default function Main() {
+  const {darkTheme} = useTheme();
   const { isAuthenticated } = useAuth();
 
   return (
+  // <div className="main" style={{backgroundColor: darkTheme}}>
+  <div className="main"> 
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
@@ -23,17 +28,7 @@ export default function Main() {
         path="/createstories" 
         element = {
           isAuthenticated ? <CreateStory /> : 
-          <Link 
-          to="/login"
-          style = {{
-            textAlign: "center",
-            textTransform: "uppercase",
-            fontSize: "40px",
-            cursor: "pointer",
-            fontWeight: "bold",
-            color:"#00f",
-          }}
-          >
+          <Link to="/login">
           {
             isAuthenticated ? '' : 
             <p>
@@ -46,6 +41,8 @@ export default function Main() {
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
+    <Footer />
+  </div>
   );
 }
 

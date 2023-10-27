@@ -1,5 +1,4 @@
 import useStoryCRUD from "../Components/Action";
-import styles from "./Story.module.css"; 
 
 const Story = ({ storyId }) => {
   const storageKey = 'stories';
@@ -8,15 +7,17 @@ const Story = ({ storyId }) => {
   const story = readStoriesById(storyId);
 
   if (!story) {
-    return <div className={styles.error}>Story not found</div>;
+    return <div className={"error"}>Story not found</div>;
   }
 
   return (
-    <div className={styles.storyContainer}>
-      <p className={styles.content}>{story.content}</p>
-      <p className={styles.author}>Author: {story.author}</p>
-      <p className={styles.public}>Public: {story.isPublic ? "Yes" : "No"}</p>
-      <p className={styles.anonymous}>Anonymous: {story.isAnonymous ? "Yes" : "No"}</p>
+    <div className="story">
+      <div className="story-container">
+        <div className="content">{story.content}</div>
+        <div className="author">Author: {story.author}</div>
+        <div className="public">Public: {story.isPublic ? "Yes" : "No"}</div>
+        <div className="anonymous">Anonymous: {story.isAnonymous ? "Yes" : "No"}</div>
+      </div>
     </div>
   );
 };

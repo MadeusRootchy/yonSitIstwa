@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CRUD = (storageKey) => {
+export default function CRUD(storageKey) {
   const [stories, setStories] = useState(() => {
     const storedStories = localStorage.getItem(storageKey);
     return storedStories ? JSON.parse(storedStories) : [];
@@ -43,4 +43,4 @@ const CRUD = (storageKey) => {
   };
 };
 
-export default CRUD;
+
