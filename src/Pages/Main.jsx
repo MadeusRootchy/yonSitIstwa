@@ -41,7 +41,7 @@ export default function Main() {
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
-    <Footer />
+    {/* <Footer /> */}
   </div>
   );
 }
