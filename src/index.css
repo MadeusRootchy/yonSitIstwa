@@ -1,7 +1,8 @@
 :root{
-    --light: #f5f6fa;
-    --main: #353b48;
-    --sec:#c23616;
+    --light: #3c6382;
+    --main: #0a3d62;
+    --sec:#e55039;
+    --lighter:#f5f6fa;
 }
 
 *{
@@ -33,7 +34,7 @@ nav ul li{
 }
 
 nav li a{
-    color: var(--light);
+    color: var(--lighter);
 
     text-decoration: none;
     font-size: 16px;
@@ -65,18 +66,59 @@ nav li a{
 
 }
 
+/* LOGIN */
+.login-form{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 20px;
+    background-color: var(--lighter);
+    border: 1px dotted var(--light);
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.login-form-field input,
+.login-form button{
+    width: 300px;
+    padding: 15px;
+    border-radius: 10px ;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+
+}
+
+.login-form-field input{
+    font-size: .8em;
+    font-weight: bolder;
+}
+
+.login-form button{
+    background-color: var(--main);
+    color: var(--lighter);
+    font-weight: bold;
+    
+}
+
+.login-form-links{
+    margin: 20px 0;
+    font-size: .9em;
+    text-align: center;
+    color: var(--sec);
+}
+
 /* HOME */
 .home{
-    width: 80%;
+    /* width: 50%; */
     margin: 10px auto;
-    text-align: center;
-    border: 1px solid var(--main);
+    /* text-align: center; */
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .home h2{
-    text-transform: uppercase;
-    font-size: 48px;
-    margin: 10px 0;
+    font-size: 30px;
+    color: var(--main);
+    text-decoration: underline;
 }
 
 .home p{
@@ -84,27 +126,21 @@ nav li a{
     margin: 10px 0;
 }
 
-/* ABOUT */
-.about{
-    width: 60%;
-    margin: 10px auto;
-    text-align: center;
-    border: 1px solid var(--main);
-    text-justify: auto;
-    font-size: 18px;
+.home .separator{
+    height: 100vh;
+    border-left: 1px dotted var(--sec);
+    color: var(--light);
+
 }
+
+/* ABOUT */
+
 
 /* STORIES */
-.story-list{
-    width: 80%;
-    margin: auto;
-}
-.story-list .my-stories, .public-stories{
-    margin: 20px;
-}
+
 
 .story-list h2{
-    font-size: 36px;
+    font-size: 30px;
     color: var(--main);
     text-decoration: underline;
 }
@@ -113,21 +149,28 @@ nav li a{
     margin: 10px;
     padding: 25px;
     max-width: 600px;
-    border: 1px solid var(--main);
+    border: 1px solid var(--light);
     border-radius: 10px;
     text-align: justify;
+    font-size: .9em;
+    box-sizing: border-box;
 }
 
 .story-snippet h3{
     font-size: 24px;
     font-weight: bold;
-    color: var(--sec);
+    color: var(--sec);    
+    /*  */
+    display: flex;
+    justify-content: space-between;
 }
 
-.story-snippet p{
-    font-size: 1em;
-    padding: 10px 0;
+
+.story-snippet span{
+    font-size: .8em;
+    color: #0ba413;
 }
+
 .story-list button{
     height: 25px;
     padding: 5px;
@@ -144,56 +187,7 @@ nav li a{
 }
 
 /* EDIT STORIES */
-.form-edit{
-    max-width: 600px;
-    margin: 10px;
-    padding: 25px;
-    border-radius: 7px;
-    border: 1px solid var(--main);
-}
 
-.form-edit input[type='text']{
-    width: 400px;
-    padding: 10px;
-    font-size: 14px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.form-edit label{
-    font-weight: bold;
-    font-size: 20px;
-    margin: 15px 0;
-}
-
-.form-edit .form-field{
-    max-width: 400px;
-    margin: 15px 0;
-
-}
-
-.form-edit textarea{
-    width: 500px;
-    height: 250px;
-    font-size: 14px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 10px;
-    
-}
-
-.form-edit button{
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: none;
-    outline: none;
-    border-radius: 7px;
-    padding: 0 10px;
-    color: var(--light);
-}
-
-.form-edit .checkbox-label{
-    margin: 0 5px;
-}
 
 .btn-save{
     background-color: #0e6f05;
@@ -207,67 +201,88 @@ nav li a{
 
 /* CREATE STORY */
 
-.new-story{
-    width: 80%;
+
+.edit-story{
+    margin: 10px;
+    padding: 25px;
     max-width: 600px;
-    margin:20px auto;
+    border: 1px solid var(--light);
+    border-radius: 10px;
+    text-align: justify;
+    box-sizing: border-box;
 }
 
-.new-story h2{
-    font-size: 36px;
-    color: var(--main);
+
+.edit-story h3{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--sec);
     text-decoration: underline;
 }
 
-.new-story input[type='text']{
-    width: 400px;
-    padding: 10px;
-    font-size: 14px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.edit-story .form-field{
+    margin: 5px 0;
 }
 
-.new-story label{
-    font-weight: bold;
-    font-size: 20px;
-    margin: 15px 0;
-}
-
-.new-story .form-field{
-    max-width: 400px;
-    margin: 15px 0;
-
-}
-
-.new-story textarea{
+.edit-story input[type='text']{
     width: 500px;
-    height: 300px;
-    font-size: 14px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 10px;
-    
-}
-
-.new-story button{
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
+    font-size: 1em;
+    padding: 15px;
+    border-radius: 10px ;
     border: none;
     outline: none;
-    border-radius: 7px;
-    padding: 0 10px;
+    background-color: var(--lighter);
+}
+
+.edit-story textarea{
+    width: 500px;
+    height: 100px;
+    font-size: 1em;
+    border-radius: 10px ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 15px;
+    border: none;
+    outline: none;
+    background-color: var(--lighter);
+    margin-bottom: 15px;
+}
+
+.edit-story textarea,
+.edit-story [placeholder]{
     color: var(--light);
 }
 
-.new-story .checkbox-label{
+
+.edit-story button{
+    height: 25px;
+    padding: 5px;
+    margin: 3px;
+}
+
+.edit-story input[type='checkbox']{
     margin: 0 5px;
 }
 
-.btn-save{
-    background-color: #0e6f05;
-    height: 30px;
+.edit-story .btns{
+    max-width: 600px;
+}
+
+.btn-save, .btn-cancel{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    
 }
 
 .btn-cancel{
     background-color: #c23616;
-    height: 30px;
+
+}
+
+.btn-save{
+    background-color: #0e6f05;
 }

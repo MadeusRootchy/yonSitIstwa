@@ -1,4 +1,5 @@
 import React, { useState} from "react";
+import EditStory from "./EditStory";
 
 const UpdateStory = ({ initialValues, onSubmit, onCancel }) => {
   const [title, setTitle] = useState(initialValues.title);
@@ -22,61 +23,22 @@ const UpdateStory = ({ initialValues, onSubmit, onCancel }) => {
 
  
   return (
-    <form onSubmit={handleSubmit} className="form-edit">
-      <h2>Edit</h2>
-      <div className="form-label">
-        <label className="form-label" htmlFor="title">
-          Title
-        </label><br />
-        <input
-          className="form-input"
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
+    <div className="update-story">      
+        <EditStory 
+        pageTitle={'Edit Story'}
+        handleSubmit={handleSubmit}
+        onCancel={onCancel}
+        title={title}
+        setTitle={setTitle}
+        content={content}
+        setContent={setContent}
+        isPublic={isPublic}
+        setIsPublic={setIsPublic}
+        isAnonymous={isAnonymous}
+        setIsAnonymous={setIsAnonymous}
         />
-      </div>
-      <div className="form-field">
-        <label className="form-label" htmlFor="content">
-          Content
-        </label>
-        <br />
-        <textarea
-          className="form-textarea"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          required
-        />
-      </div>
-      <div className="form-field">
-        <input
-            className="checkbox-input"
-            type="checkbox"
-            checked={isPublic}
-            onChange={() => setIsPublic(!isPublic)}
-          />
-        <label className="checkbox-label" htmlFor="Public">
-          Public
-        </label>
-      </div>
-      <div className="form-field">
-        <input
-            className="checkbox-input"
-            type="checkbox"
-            checked={isAnonymous}
-            onChange={() => setIsAnonymous(!isAnonymous)}
-          />
-        <label className="checkbox-label" htmlFor="Anonymous">
-           Anonymous
-        </label>
-      </div>
-      <button type="submit" className="btn-save">
-        Save Changes
-      </button>
-      <button type="button" className="btn-cancel" onClick={onCancel}>
-        Cancel
-      </button>
-    </form>
+    </div>
+
   );
 };
 

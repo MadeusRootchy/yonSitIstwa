@@ -14,13 +14,18 @@ export default function StorySnippet ({key, story, handleReadClick,
 
             { isPublic === 'true'?
             
-                (<div> <h3>{story.title} </h3>
+                (
+                <div> 
+                <h3>{story.title} <span>{story.isPublic && <MdOutlinePublic /> }
+</span> </h3>
                 <p> {story.content.slice(0, 100)}... </p>
                 <div  className="story-actions">
                 <button  
                 onClick={() => handleReadClick(story)}>Read more</button>
                 </div>
-                {readingStory === story && ( 
+
+            {
+                readingStory === story && ( 
                 <div  className="story-details">
                 <p>{story.content}</p>
                     <p>Author : {story.author}</p>
@@ -47,7 +52,6 @@ export default function StorySnippet ({key, story, handleReadClick,
                 >
                     Read more
                 </button>
-                <span>{story.isPublic && <MdOutlinePublic /> }</span>
                 </div>
                 {
                 readingStory === story && (

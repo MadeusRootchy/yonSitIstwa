@@ -7,7 +7,6 @@ import NotFound from "./NotFound";
 import CreateStory from "./CreateStory";
 import StoryList from "./StoryList";
 import Layout from "../Components/Layout";
-import Footer from '../Components/Footer';
 import { useAuth } from "../Components/AuthContext"; 
 import { useTheme } from "../Components/ThemeContext";
 
@@ -21,7 +20,8 @@ export default function Main() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <Login />} />
+        <Route path="/login" 
+        element = {isAuthenticated ? <Navigate to="/" /> : <Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/story" element={ <StoryList /> } />
         <Route 
@@ -30,10 +30,7 @@ export default function Main() {
           isAuthenticated ? <CreateStory /> : 
           <Link to="/login">
           {
-            isAuthenticated ? '' : 
-            <p>
-              Go to the login page
-            </p>
+            isAuthenticated ? '' : <p> Go to the login page</p>
           }
           </Link>
         } 
@@ -41,7 +38,6 @@ export default function Main() {
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
-    {/* <Footer /> */}
   </div>
   );
 }

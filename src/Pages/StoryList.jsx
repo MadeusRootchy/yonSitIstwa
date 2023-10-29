@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../Components/AuthContext";
-import useStoryCRUD from "../Components/CRUD";
+import CRUD from "../Components/CRUD";
 import PublicStories from "../Components/PublicStories";
 import UserStories from "../Components/UserStories";
 
@@ -10,7 +10,7 @@ import UserStories from "../Components/UserStories";
 export default function StoryList() {
   const { isAuthenticated } = useAuth();
   const storageKey = 'stories';
-  const { readStories, updateStory, deleteStory } = useStoryCRUD(storageKey);
+  const { readStories, updateStory, deleteStory } = CRUD(storageKey);
 
   const stories = readStories(); 
 
@@ -42,17 +42,8 @@ export default function StoryList() {
 
   return (
     <div  className="story-list">
-     
-     <PublicStories 
-      readingStory={readingStory}
-      setReadingStory={setReadingStory}
-      publicStories={publicStories}
-      handleReadClick={handleReadClick}
-      isAuthenticated={isAuthenticated}
-      
-     />
 
-     <UserStories 
+    <UserStories 
      updateStory={updateStory}
      deleteStory={deleteStory}
      isAuthenticated={isAuthenticated}
@@ -62,20 +53,17 @@ export default function StoryList() {
      handleReadClick={handleReadClick}
      editingStory={editingStory}
      setEditingStory={setEditingStory}
-
+    />
+     
+     <PublicStories 
+      readingStory={readingStory}
+      setReadingStory={setReadingStory}
+      publicStories={publicStories}
+      handleReadClick={handleReadClick}
+      isAuthenticated={isAuthenticated}
      />
 
 
-      {/* <p>
-      <Link to="/login">
-        {
-        isAuthenticated ? '' :
-        <p>Go to the login page</p>
-        }
-      </Link>
-      </p> */}
-
-      
     </div>
   );
 }

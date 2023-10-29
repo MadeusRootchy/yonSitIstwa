@@ -48,48 +48,42 @@ export default function Login() {
 
 
   return (
-    <div className={"login"}>
+    <div className="login">
       <h2>Login</h2>
       {
         isAuthenticated ? 
       (
         <div>You are already logged in !</div>
       ) : (
-        <form onSubmit={handleLogin} className={"form"}>
-          <div className={"formField"}>
-            <label 
-            className={"formLabel"} 
-            htmlFor="email">
-              Email :
-            </label>
+        <form onSubmit={handleLogin} className="login-form">
+          <div className='login-form-field'>
             <br />
             <input
-              className={"formInput"}
               type="email"
+              placeholder="Email..."
               value={email}
               id="email"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <br />
-          <div className={"formField"}>
-            <label 
-            
-            htmlFor="password">
-              Password/Firstname :
-            </label>
+          <div className='login-form-field'>
             <br />
             <input
-              
+              placeholder="Password"
               type="password"
               value={password}
               id="password"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+          <div className='login-form-links'>
+            <a href="#">Forgot Password</a>
+            <br />
+            <a href="#">Create New Account</a>
+          </div>
           <br />
-          <div className={"formField"}>
-            <button  type="submit">
+          <div className='login-form-field'>
+            <button type="submit">
               Login
             </button>
           </div>
