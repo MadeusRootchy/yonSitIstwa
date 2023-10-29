@@ -39,7 +39,7 @@ export default function CreateStory() {
     setIsPublic(true);
     setIsAnonymous(false);
 
-    navigate("/story");
+    navigate("/");
   }
 
   return (

@@ -20,11 +20,16 @@ export default function Main() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="/login" 
-        element = {isAuthenticated ? <Navigate to="/" /> : <Login />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/story" element={ <StoryList /> } />
-        <Route 
+        {/* <Route path="/story" element={ <StoryList /> } /> */}
+        {/* <Route path="/about" element={<About />} /> */}
+
+        {/* <Route path="/login" 
+        element = {
+          isAuthenticated ? <Navigate to="/" /> : <Login />
+        } 
+        /> */}
+
+        {/* <Route 
         path="/createstories" 
         element = {
           isAuthenticated ? <CreateStory /> : 
@@ -34,7 +39,7 @@ export default function Main() {
           }
           </Link>
         } 
-        />
+        /> */}
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
