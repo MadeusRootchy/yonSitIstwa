@@ -16,8 +16,10 @@ export default function StorySnippet ({key, story, handleReadClick,
             
                 (
                 <div> 
-                <h3>{story.title} <span>{story.isPublic && <MdOutlinePublic /> }
-</span> </h3>
+                <h3>{story.title} 
+                <span>
+                    {story.isPublic && <MdOutlinePublic /> }
+                </span> </h3>
                 <p> {story.content.slice(0, 100)}... </p>
                 <div  className="story-actions">
                 <button  

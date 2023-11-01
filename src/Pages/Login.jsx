@@ -1,50 +1,39 @@
-import React, { useState,useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useAuth } from "../Components/AuthContext";
+import axios from "axios";
 
 
 export default function Login() {
   const { isAuthenticated, setIsAuthenticated } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [usersData, setUsersData] = useState([]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
   
-    const credentials = {
-      email, 
-      password,
-    }
-    
-    try {
-      const usersResponse = await fetch("https://reqres.in/api/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(credentials),
-      });
+ 
+      axios.get("https://reqres.in/api/users")
+      .then( response => { 
+        setUsersData(response.data.data)
+      }).catch( err => {
+        console.log('there is an error',err)
+      })
+      for(let user in usersData){
 
-      const response = await fetch("https://reqres.in/api/users");
-      const userData = await response.json();
-
-      if (usersResponse.ok){
-        const {token} = await usersResponse.json();
-        setIsAuthenticated(true);
-        localStorage.setItem("token", token);
-
-        const matchingUser = userData.data.find(user => user.email === email && user.first_name === password);
-        localStorage.setItem("authenticatedUser", JSON.stringify(matchingUser));
-
-        console.log('Login successful')
+        if (usersData[user].email == email && usersData[user].first_name ==password){
+          console.log("nou pran yo!!!!!!")
+          setIsAuthenticated(true);
+          localStorage.setItem("authenticatedUser", JSON.stringify(usersData[user]));
+          break;
+        }
+        else{
+          setIsAuthenticated(false);
+          console.log("yo pran nou !!!!!!");
+        }
       }
-      else {
-        console.error("Authentication failed");
-      }
+
     } 
-    catch (error) {
-      console.error("An error has occurred:", error);
-    }
-  }
 
 
   return (

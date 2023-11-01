@@ -53,6 +53,8 @@ export default function StoryList() {
      handleReadClick={handleReadClick}
      editingStory={editingStory}
      setEditingStory={setEditingStory}
+     readingStory={readingStory}
+     setReadingStory={setReadingStory}
     />
      
      <PublicStories 

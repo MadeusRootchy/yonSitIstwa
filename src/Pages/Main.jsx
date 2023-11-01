@@ -15,8 +15,7 @@ export default function Main() {
   const { isAuthenticated } = useAuth();
 
   return (
-  // <div className="main" style={{backgroundColor: darkTheme}}>
-  <div className="main"> 
+  <div className="main" style={{backgroundColor: darkTheme}}>
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
