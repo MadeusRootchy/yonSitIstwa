@@ -22,14 +22,12 @@ export default function Login() {
       for(let user in usersData){
 
         if (usersData[user].email == email && usersData[user].first_name ==password){
-          console.log("nou pran yo!!!!!!")
           setIsAuthenticated(true);
           localStorage.setItem("authenticatedUser", JSON.stringify(usersData[user]));
           break;
         }
         else{
           setIsAuthenticated(false);
-          console.log("yo pran nou !!!!!!");
         }
       }
 
@@ -37,14 +35,11 @@ export default function Login() {
 
 
   return (
-    <div className="login">
-      <h2>Login</h2>
+    <div className={`${isAuthenticated} ? logged-in : login`}>
       {
-        isAuthenticated ? 
-      (
-        <div>You are already logged in !</div>
-      ) : (
+        isAuthenticated ? '' : (
         <form onSubmit={handleLogin} className="login-form">
+          <h2>Login</h2>
           <div className='login-form-field'>
             <br />
             <input

@@ -59,7 +59,6 @@ export default function StorySnippet ({key, story, handleReadClick,
                 readingStory === story && (
                 <div  className="story-details">
                     <p>{story.content}</p>
-                    <h5>Author : {story.author}</h5><br />
                     <button
                     onClick={() => setReadingStory(null)}
                     >
