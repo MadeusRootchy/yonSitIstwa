@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { useAuth } from "../Components/AuthContext";
-import CRUD from "../Components/CRUD";
-import PublicStories from "../Components/PublicStories";
-import UserStories from "../Components/UserStories";
+import { useAuth } from '../Authentication/AuthContext';
+import CRUD from '../CRUD/CRUD';
+import PublicStories from '../PublicStories';
+import UserStories from '../UserStories';
 
 
 
@@ -41,31 +40,28 @@ export default function StoryList() {
   };
 
   return (
-    <div  className="story-list">
-
-    <UserStories 
-     updateStory={updateStory}
-     deleteStory={deleteStory}
-     isAuthenticated={isAuthenticated}
-     userStories={userStories}
-     handleEditClick={handleEditClick}
-     handleCancelEdit={handleCancelEdit}
-     handleReadClick={handleReadClick}
-     editingStory={editingStory}
-     setEditingStory={setEditingStory}
-     readingStory={readingStory}
-     setReadingStory={setReadingStory}
-    />
-     
-     <PublicStories 
+    <div className="story-list">
+      <UserStories 
+      updateStory={updateStory}
+      deleteStory={deleteStory}
+      isAuthenticated={isAuthenticated}
+      userStories={userStories}
+      handleEditClick={handleEditClick}
+      handleCancelEdit={handleCancelEdit}
+      handleReadClick={handleReadClick}
+      editingStory={editingStory}
+      setEditingStory={setEditingStory}
+      readingStory={readingStory}
+      setReadingStory={setReadingStory}
+      />
+      
+      <PublicStories 
       readingStory={readingStory}
       setReadingStory={setReadingStory}
       publicStories={publicStories}
       handleReadClick={handleReadClick}
       isAuthenticated={isAuthenticated}
-     />
-
-
+      />
     </div>
   );
 }

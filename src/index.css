@@ -3,6 +3,7 @@
     --main: #0a3d62;
     --sec:#e55039;
     --lighter:#f5f6fa;
+    
 }
 
 *{
@@ -10,13 +11,31 @@
     margin: 0;
 }
 
+.light{
+    --light: #3c6382;
+    --main: #0a3d62;
+    --sec:#e55039;
+    --lighter:#f5f6fa;
+    --basic: #fff;
+}
 
+.dark{
+    --light: #3c6382;
+    --sec:#5B8FB9;
+    /* --lighter:#5B8FB9; */
+    --basic:#03001C;
+    --third: #B6EADA;
+    font-weight: bold;
+
+}
 
 .main{
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: var(--lighter);
+    background-color: var(--basic);
+    color: var(--third);
 }
 
 /* LAYOUT */
@@ -24,6 +43,14 @@
     width: 100%;
     background-color: var(--main);
 
+}
+
+.layout button{
+    padding: 3px 10px;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
 }
 
 nav{
@@ -77,6 +104,11 @@ nav li a{
 }
 
 /* LOGIN */
+
+.login{
+    margin: 0 20px;
+}
+
 .login-form{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 20px;
@@ -155,6 +187,7 @@ nav li a{
     font-size: 30px;
     color: var(--main);
     text-decoration: underline;
+
 }
 
 .story-snippet{
@@ -166,22 +199,38 @@ nav li a{
     text-align: justify;
     font-size: .9em;
     box-sizing: border-box;
+    overflow: hidden;
 }
+
+
 
 .story-snippet h3{
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
-    color: var(--sec);    
-    /*  */
-    display: flex;
-    justify-content: space-between;
+    color: var(--sec);
+    margin: 0 10px;    
 }
 
 
-.story-snippet span{
-    font-size: .8em;
+.story-snippet .status{
     color: #0ba413;
 }
+.story-snippet .profile{
+    display: inline-flex;
+    align-items: center;
+}
+
+
+
+.story-snippet .profile-pic{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ddd;
+    border: 1px solid var(--light);
+}
+
+
 
 .story-list button{
     height: 25px;
@@ -199,6 +248,8 @@ nav li a{
     margin: 10px 25px;
     font-size: 1.1em;
     border: 1px solid var(--main);
+    color: #03001C;
+
     font-size: 1em;
     padding: 15px;
     border-radius: 10px ;
@@ -264,19 +315,21 @@ nav li a{
     border: none;
     outline: none;
     background-color: var(--lighter);
-    margin-bottom: 15px;
+    margin: 15px 0;
 }
 
 .edit-story textarea,
 .edit-story [placeholder]{
-    color: var(--light);
+    color: #03001C;
 }
 
 
 .edit-story button{
-    height: 25px;
-    padding: 5px;
+    height: 30px;
+    padding: 10px 5px;
     margin: 3px;
+    color: #fff;
+    
 }
 
 .edit-story input[type='checkbox']{

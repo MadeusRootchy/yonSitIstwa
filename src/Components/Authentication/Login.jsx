@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useAuth } from "../Components/AuthContext";
+import React, { useState} from "react";
+import { useAuth } from './AuthContext';
 import axios from "axios";
 
 
@@ -17,7 +17,7 @@ export default function Login() {
       .then( response => { 
         setUsersData(response.data.data)
       }).catch( err => {
-        console.log('there is an error',err)
+        console.log('Error',err)
       })
       for(let user in usersData){
 

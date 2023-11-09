@@ -15,13 +15,15 @@ export default function CRUD(storageKey) {
     const newStories = [...stories, story];
     saveStories(newStories);
   };
+
   const readStories = () => {
     return stories;
   };
 
-  const readStoriesById = (storyId) => {
+  const readStoryById = (storyId) => {
     return stories;
   };
+
   const updateStory = (storyId, updatedStory) => {
     const newStories = stories.map(story =>
       story.id === storyId ? updatedStory : story
@@ -39,7 +41,7 @@ export default function CRUD(storageKey) {
     readStories,
     updateStory,
     deleteStory,
-    readStoriesById,
+    readStoryById,
   };
 };
 

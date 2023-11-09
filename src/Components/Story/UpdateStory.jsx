@@ -1,7 +1,7 @@
 import React, { useState} from "react";
-import EditStory from "./EditStory";
+import EditStory from './EditStory';
 
-const UpdateStory = ({ initialValues, onSubmit, onCancel }) => {
+export default function UpdateStory({ initialValues, onSubmit, onCancel }){
   const [title, setTitle] = useState(initialValues.title);
   const [content, setContent] = useState(initialValues.content);
   const [isPublic, setIsPublic] = useState(initialValues.isPublic);
@@ -24,22 +24,21 @@ const UpdateStory = ({ initialValues, onSubmit, onCancel }) => {
  
   return (
     <div className="update-story">      
-        <EditStory 
-        pageTitle={'Edit Story'}
-        handleSubmit={handleSubmit}
-        onCancel={onCancel}
-        title={title}
-        setTitle={setTitle}
-        content={content}
-        setContent={setContent}
-        isPublic={isPublic}
-        setIsPublic={setIsPublic}
-        isAnonymous={isAnonymous}
-        setIsAnonymous={setIsAnonymous}
-        />
+      <EditStory 
+      pageTitle={'Edit Story'}
+      handleSubmit={handleSubmit}
+      onCancel={onCancel}
+      title={title}
+      setTitle={setTitle}
+      content={content}
+      setContent={setContent}
+      isPublic={isPublic}
+      setIsPublic={setIsPublic}
+      isAnonymous={isAnonymous}
+      setIsAnonymous={setIsAnonymous}
+      />
     </div>
 
   );
 };
 
-export default UpdateStory;

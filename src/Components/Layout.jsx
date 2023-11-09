@@ -1,10 +1,20 @@
 import { Link, Outlet } from "react-router-dom";
-import { useAuth } from "../Components/AuthContext"; 
-import { Themes } from "./Themes";
-
+import { useAuth } from './Authentication/AuthContext';
+import { useTheme } from "./ThemeContext";
+import {BsToggles} from 'react-icons/bs';
 
 export default function Layout() {
+  const {darkTheme, setDarkTheme} = useTheme()
   const { isAuthenticated, setIsAuthenticated } = useAuth();
+
+  const toggleTheme = () => {
+    if(darkTheme === true){
+      setDarkTheme(false)
+    }
+    else{
+        setDarkTheme(true)
+    }
+  }
 
   return (
     <>
@@ -20,6 +30,9 @@ export default function Layout() {
           </li>
           <li>
             <Link to="/login">{isAuthenticated ? '' : "Login"}</Link>
+          </li>
+          <li>
+            <button onClick={toggleTheme}><BsToggles /></button>
           </li>
         </ul>
       </nav>

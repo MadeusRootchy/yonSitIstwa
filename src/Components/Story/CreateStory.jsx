@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../Components/AuthContext";
-import CRUD from '../Components/CRUD';
-import EditStory from "./EditStory";
+import { useAuth } from '../Authentication/AuthContext';
+import CRUD from '../CRUD/CRUD';
+import EditStory from './EditStory';
 
 export default function CreateStory() {
   const { isAuthenticated } = useAuth();
@@ -11,7 +10,6 @@ export default function CreateStory() {
   const [content, setContent] = useState("");
   const [isPublic, setIsPublic] = useState(true);
   const [isAnonymous, setIsAnonymous] = useState(false);
-  const navigate = useNavigate();
 
   const { createStory } = CRUD("stories");
 
@@ -19,7 +17,7 @@ export default function CreateStory() {
     e.preventDefault();
 
     if (!isAuthenticated) {
-      console.log("You are not authorized to create a story.");
+      console.log("Not Authorized To Create Stories");
       return;
     }
     
@@ -41,9 +39,6 @@ export default function CreateStory() {
     setDate("")
     setIsPublic(true);
     setIsAnonymous(false);
-
-
-    navigate("/");
   }
 
   return (
