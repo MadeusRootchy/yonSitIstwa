@@ -117,7 +117,7 @@ nav li a{
 .login-form{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 20px;
-    background-color: var(--lighter);
+    background-color: var(--basic);
     border: 1px dotted var(--light);
     box-sizing: border-box;
     border-radius: 5px;
