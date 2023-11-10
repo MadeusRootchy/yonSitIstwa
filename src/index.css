@@ -111,6 +111,7 @@ nav li a{
 
 .login{
     margin: 0 20px;
+    background-color: var(--basic)
 }
 
 .login-form{
