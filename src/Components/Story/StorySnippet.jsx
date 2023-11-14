@@ -6,13 +6,15 @@ import {MdOutlinePublic} from 'react-icons/md';
 
 
 export default function StorySnippet ({key, story, handleReadClick,
-    readingStory, setReadingStory, deleteStory, handleEditClick, isPublic} ) { 
+    readingStory, setReadingStory, deleteStory, handleEditClick} ) { 
    
+    const storedUser = JSON.parse(localStorage.getItem('authenticatedUser'));
+    console.log(storedUser)
 
     return (
         <div key={key} className="story-snippet">
 
-            { isPublic === 'true'?
+            { story.author !== storedUser.first_name ?
             (
             <div> 
                 <div>

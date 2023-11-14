@@ -38,7 +38,6 @@ export default function UserStories ({userStories, isAuthenticated,
               readingStory={readingStory}
               deleteStory={deleteStory}
               handleEditClick={handleEditClick}
-              isPublic='false'
               />
               )}
             </div>

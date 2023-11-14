@@ -41,26 +41,27 @@ export default function StoryList() {
 
   return (
     <div className="story-list">
-      <UserStories 
-      updateStory={updateStory}
-      deleteStory={deleteStory}
-      isAuthenticated={isAuthenticated}
-      userStories={userStories}
-      handleEditClick={handleEditClick}
-      handleCancelEdit={handleCancelEdit}
-      handleReadClick={handleReadClick}
-      editingStory={editingStory}
-      setEditingStory={setEditingStory}
-      readingStory={readingStory}
-      setReadingStory={setReadingStory}
-      />
+      {/* <UserStories 
+          updateStory={updateStory}
+          deleteStory={deleteStory}
+          isAuthenticated={isAuthenticated}
+          userStories={userStories}
+          handleEditClick={handleEditClick}
+          handleCancelEdit={handleCancelEdit}
+          handleReadClick={handleReadClick}
+          editingStory={editingStory}
+          setEditingStory={setEditingStory}
+          readingStory={readingStory}
+          setReadingStory={setReadingStory}
+      /> */}
+
       
       <PublicStories 
-      readingStory={readingStory}
-      setReadingStory={setReadingStory}
-      publicStories={publicStories}
-      handleReadClick={handleReadClick}
-      isAuthenticated={isAuthenticated}
+          readingStory={readingStory}
+          setReadingStory={setReadingStory}
+          publicStories={publicStories}
+          handleReadClick={handleReadClick}
+          isAuthenticated={isAuthenticated}
       />
     </div>
   );

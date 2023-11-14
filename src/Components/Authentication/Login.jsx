@@ -21,7 +21,7 @@ export default function Login() {
       })
       for(let user in usersData){
 
-        if (usersData[user].email == email && usersData[user].first_name ==password){
+        if (usersData[user].email == email && usersData[user].first_name == password){
           setIsAuthenticated(true);
           localStorage.setItem("authenticatedUser", JSON.stringify(usersData[user]));
           break;

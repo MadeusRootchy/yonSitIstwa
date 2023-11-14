@@ -4,6 +4,7 @@ import NotFound from './Pages/NotFound';
 import Layout from './Components/Layout';
 import { useAuth } from './Components/Authentication/AuthContext';
 import { useTheme } from './Components/ThemeContext';
+import Profile from "./Pages/Profile";
 
 export default function Main() {
   const {darkTheme, setDarkTheme} = useTheme();
@@ -14,6 +15,7 @@ export default function Main() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
+        <Route path="Profile" element={<Profile />}/>
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
